@@ -1,0 +1,178 @@
+List of Main Menu Values
+First Level menu is :
+Industry
+  Sub Menu: Retail
+  Sub Menu: Healthcare
+  Sub Menu: Manufacturing
+  Sub Menu: Transportation and Logistics
+  Sub Menu: Hospitality
+  Sub Menu: Field Operations
+  Sub Menu: Mobile Technology for Energy and Utilities
+First Level menu is :
+Hardware
+  Sub Menu: Mobile Computers
+  Sub Menu: Printers
+  Sub Menu: Barcode Scanners
+  Sub Menu: RFID
+  Sub Menu: Printing Supplies
+  Sub Menu: Location Technologies
+  Sub Menu: Tablets
+  Sub Menu: Machine Vision and Industrial Fixed Scanners
+  Sub Menu: Interactive Kiosks
+  Sub Menu: Accessories
+  Sub Menu: Environmental Sensors
+First Level menu is :
+Software
+  Sub Menu: AI Software
+  Sub Menu: Zebra Workcloud Solutions
+  Sub Menu: Device Software
+  Sub Menu: Machine Vision Software
+First Level menu is :
+Services
+  Sub Menu: Maintenance Plans
+  Sub Menu: Visibility Services
+  Sub Menu: Professional Services
+  Sub Menu: Zebra Managed Services
+  Sub Menu: Technical Support
+  Sub Menu: Circular Economy
+First Level menu is :
+Support and Downloads
+  Sub Menu: Product Support
+  Sub Menu: Support Resources
+  Sub Menu: Support Notifications
+First Level menu is :
+Partners
+  Sub Menu: Connect with a Zebra Partner
+  Sub Menu: Become a Zebra Partner
+  Sub Menu: Partner Resources
+
+
+The Sub Navigation menu at Mobile-Computer-Software is  
+List of options Availabe under Set Up
+  Zebra DNA Cloud
+  DataWedge
+  StageNow Android Device Staging
+  Enterprise Mobility Development Kit
+  Enterprise Browser
+  Zebra Mobile Computing AI Suite
+  Zebra Zero Touch
+List of options Availabe under Secure and Manage
+  Zebra DNA Cloud
+  Enterprise Home Screen
+  Mobility Extensions (Mx)
+  Identity Guardian
+  GMS (Google Mobile Services) Restricted Mode
+  RxLogger
+  Device Tracker
+  Device Diagnostic Tool
+  OEMconfig
+  LifeGuard™ for Android™
+  Wireless Insights
+  Wireless Fusion
+List of options Availabe under Optimize 
+  Zebra DNA Cloud
+  NG SimulScan
+  Enterprise Keyboard
+  All-Touch Terminal Emulation
+  TekTerm
+  OCR Wedge
+  Wireless Analyzer
+  Workstation Connect
+  Device Central
+List of options Availabe under Additional Software
+  AppCenter for Windows
+  Terminal Emulation Lite
+  Asset Tracker Lite
+  Zebra Dimensioning™
+  DNA Wireless
+  Zebra Pay
+  Swipe Assist
+List of Main Menu Values
+First Level menu is :
+Industry
+  Sub Menu: Retail
+  Sub Menu: Healthcare
+  Sub Menu: Manufacturing
+  Sub Menu: Transportation and Logistics
+  Sub Menu: Hospitality
+  Sub Menu: Field Operations
+  Sub Menu: Mobile Technology for Energy and Utilities
+First Level menu is :
+Hardware
+  Sub Menu: Mobile Computers
+  Sub Menu: Printers
+  Sub Menu: Barcode Scanners
+  Sub Menu: RFID
+  Sub Menu: Printing Supplies
+  Sub Menu: Location Technologies
+  Sub Menu: Tablets
+  Sub Menu: Machine Vision and Industrial Fixed Scanners
+  Sub Menu: Interactive Kiosks
+  Sub Menu: Accessories
+  Sub Menu: Environmental Sensors
+First Level menu is :
+Software
+  Sub Menu: AI Software
+  Sub Menu: Zebra Workcloud Solutions
+  Sub Menu: Device Software
+  Sub Menu: Machine Vision Software
+First Level menu is :
+Services
+  Sub Menu: Maintenance Plans
+  Sub Menu: Visibility Services
+  Sub Menu: Professional Services
+  Sub Menu: Zebra Managed Services
+  Sub Menu: Technical Support
+  Sub Menu: Circular Economy
+First Level menu is :
+Support and Downloads
+  Sub Menu: Product Support
+  Sub Menu: Support Resources
+  Sub Menu: Support Notifications
+First Level menu is :
+Partners
+  Sub Menu: Connect with a Zebra Partner
+  Sub Menu: Become a Zebra Partner
+  Sub Menu: Partner Resources
+
+
+The Sub Navigation menu at Mobile-Computer-Software is  
+List of options Availabe under Set Up
+  Zebra DNA Cloud
+  DataWedge
+  StageNow Android Device Staging
+  Enterprise Mobility Development Kit
+  Enterprise Browser
+  Zebra Mobile Computing AI Suite
+  Zebra Zero Touch
+List of options Availabe under Secure and Manage
+  Zebra DNA Cloud
+  Enterprise Home Screen
+  Mobility Extensions (Mx)
+  Identity Guardian
+  GMS (Google Mobile Services) Restricted Mode
+  RxLogger
+  Device Tracker
+  Device Diagnostic Tool
+  OEMconfig
+  LifeGuard™ for Android™
+  Wireless Insights
+  Wireless Fusion
+List of options Availabe under Optimize 
+  Zebra DNA Cloud
+  NG SimulScan
+  Enterprise Keyboard
+  All-Touch Terminal Emulation
+  TekTerm
+  OCR Wedge
+  Wireless Analyzer
+  Workstation Connect
+  Device Central
+List of options Availabe under Additional Software
+  AppCenter for Windows
+  Terminal Emulation Lite
+  Asset Tracker Lite
+  Zebra Dimensioning™
+  DNA Wireless
+  Zebra Pay
+  Swipe Assist

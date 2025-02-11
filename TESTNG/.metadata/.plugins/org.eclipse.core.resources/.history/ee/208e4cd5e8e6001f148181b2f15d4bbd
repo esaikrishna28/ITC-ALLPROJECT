@@ -1,0 +1,40 @@
+package webdriveruniversity;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Filewriteclass {
+
+	private static final String FILE_PATH = ""; // Update with your path
+
+	
+	
+	
+	
+	
+    // Function to write content to a Notepad file (overwriting each time)
+    public static void writeToFile(String content) {
+        BufferedWriter writer = null;
+        try {
+            writer = new BufferedWriter(new FileWriter(FILE_PATH)); // Overwrite mode
+            writer.write(content);
+            writer.newLine(); // Add a new line after writing
+            System.out.println("Successfully wrote to the file: " + FILE_PATH);
+        } catch (IOException e) {
+            System.err.println("An error occurred while writing to the file: " + e.getMessage());
+        } finally {
+            try {
+                if (writer != null) {
+                    writer.close(); // Close the writer
+                }
+            } catch (IOException e) {
+                System.err.println("Failed to close the writer: " + e.getMessage());
+            }
+        }
+    }
+	
+	
+	
+	
+}

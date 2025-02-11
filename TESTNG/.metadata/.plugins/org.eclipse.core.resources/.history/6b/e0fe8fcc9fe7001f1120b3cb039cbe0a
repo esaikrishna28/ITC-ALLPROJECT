@@ -1,0 +1,163 @@
+package webdriveruniversity;
+
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class CapturingScreenshots {
+
+    WebDriver driver;
+    
+    // Define the folder paths for screenshots and reports
+    private static final String SCREENSHOT_FOLDER = "C:\\Users\\direc\\OneDrive\\Desktop\\CorporateTraining\\ITC\\Screenshots\\";
+    private static final String REPORT_FOLDER = "C:\\Users\\direc\\OneDrive\\Desktop\\CorporateTraining\\ITC\\TestReports\\";
+
+    // The report content will be stored here
+    private StringBuilder reportContent = new StringBuilder();
+
+    // Setup WebDriver before each test
+    @BeforeMethod
+    public void setUp() throws Exception {
+        try {
+            // Set the path to the WebDriver executable
+            String driverPath = System.getProperty("webdriver.chrome.driver", "C:\\Users\\direc\\OneDrive\\Desktop\\CorporateTraining\\ITC\\chromedriver-win64\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", driverPath);
+
+            // Initialize WebDriver (using Chrome in this example)
+            driver = new ChromeDriver();
+            
+            // Ensure the screenshot and report folders exist
+            Files.createDirectories(Paths.get(SCREENSHOT_FOLDER));  // Create folder if it doesn't exist
+            Files.createDirectories(Paths.get(REPORT_FOLDER)); // Create folder if it doesn't exist
+
+            // Initialize HTML report structure
+            reportContent.append("<html><head><title>Test Report</title></head><body>");
+            reportContent.append("<h1>Test Execution Report</h1>");
+            reportContent.append("<h3>Test Executed on: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")) + "</h3>");
+            reportContent.append("<table border='1'><tr><th>Test Step</th><th>Status</th><th>Screenshot</th></tr>");
+        } catch (WebDriverException e) {
+            System.out.println("Error initializing WebDriver: " + e.getMessage());
+            throw e;
+        } catch (Exception e) {
+            System.out.println("An unexpected error occurred during setup: " + e.getMessage());
+            throw e;
+        }
+    }
+
+    // Method to capture screenshots and save them with a timestamped name in the same folder
+    private String captureScreenshot(String screenshotName) {
+        try {
+            // Take screenshot
+            File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+
+            // Get the current date and time for file naming
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss");
+            String currentDateTime = LocalDateTime.now().format(formatter);
+
+            // Define the path where the screenshot will be saved (using formatted date and time)
+            String screenshotPath = SCREENSHOT_FOLDER + screenshotName + "_" + currentDateTime + ".png";
+
+            // Save the screenshot to the defined path
+            FileHandler.copy(screenshot, new File(screenshotPath));
+
+            return screenshotPath;
+
+        } catch (IOException e) {
+            System.out.println("Error capturing screenshot: " + e.getMessage());
+            e.printStackTrace();
+            return "";
+        }
+    }
+
+    // Test to launch the URL and select Computers > Desktops
+    @Test
+    public void launchWebShop() {
+        try {
+            // Open the URL
+            driver.get("https://demowebshop.tricentis.com/");
+
+            // Capture screenshot after page load
+            String screenshotPath = captureScreenshot("homepage");
+            reportContent.append("<tr><td>Open Homepage</td><td>Pass</td><td><img src='" + screenshotPath + "' width='200'></td></tr>");
+
+            // Click on "Computers" from the menu
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebElement computersMenu = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Computers")));
+            computersMenu.click();
+
+            // Capture screenshot after clicking Computers menu
+            screenshotPath = captureScreenshot("computersMenu");
+            reportContent.append("<tr><td>Click Computers</td><td>Pass</td><td><img src='" + screenshotPath + "' width='200'></td></tr>");
+
+            // Click on "Desktops" under the Computers category
+            WebElement desktopsLink = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Desktops")));
+            desktopsLink.click();
+
+            // Capture screenshot after clicking Desktops
+            screenshotPath = captureScreenshot("desktopsPage");
+            reportContent.append("<tr><td>Click Desktops</td><td>Pass</td><td><img src='" + screenshotPath + "' width='200'></td></tr>");
+
+            // Optionally, you can assert or log something to verify the page loaded
+            String pageTitle = driver.getTitle();
+            System.out.println("Page Title: " + pageTitle);
+
+            // Assert the title to ensure the correct page is loaded
+            Assert.assertTrue(pageTitle.contains("Desktops"), "Page title does not contain 'Desktops'");
+            screenshotPath = captureScreenshot("desktopsPageAfterAssertion");
+            reportContent.append("<tr><td>Page Title Check</td><td>Pass</td><td><img src='" + screenshotPath + "' width='200'></td></tr>");
+
+        } catch (NoSuchElementException e) {
+            System.out.println("Element not found: " + e.getMessage());
+            reportContent.append("<tr><td>Test Failed (Element not found)</td><td>Fail</td><td></td></tr>");
+        } catch (TimeoutException e) {
+            System.out.println("Operation timed out: " + e.getMessage());
+            reportContent.append("<tr><td>Test Failed (Timeout)</td><td>Fail</td><td></td></tr>");
+        } catch (Exception e) {
+            System.out.println("An error occurred during the test: " + e.getMessage());
+            reportContent.append("<tr><td>Test Failed (Error)</td><td>Fail</td><td></td></tr>");
+        }
+    }
+
+    // Cleanup after each test and generate the HTML report
+    @AfterMethod
+    public void tearDown() {
+        try {
+            // Close the browser
+            if (driver != null) {
+                driver.quit();
+            }
+
+            // Finalize the HTML report by closing the table and body
+            reportContent.append("</table>");
+
+            // Determine report file name using current date and time
+            String reportFileName = "TestReport_" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss")) + ".html";
+            String reportFilePath = REPORT_FOLDER + reportFileName;
+
+            // Write the report to the file
+            try (FileWriter writer = new FileWriter(reportFilePath)) {
+                writer.write(reportContent.toString());
+            }
+
+            System.out.println("HTML Report generated at: " + reportFilePath);
+
+        } catch (IOException e) {
+            System.out.println("Error generating HTML report: " + e.getMessage());
+        }
+    }
+}
+

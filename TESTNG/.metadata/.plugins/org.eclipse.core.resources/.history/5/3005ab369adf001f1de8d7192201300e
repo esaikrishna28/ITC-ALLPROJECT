@@ -1,0 +1,14 @@
+package TestNgpackage;
+
+import org.openqa.selenium.WebDriver;
+
+public class Launchurlamazon {
+
+	WebDriver driver;
+	
+	@BeforeClass
+	
+	
+	
+	
+}

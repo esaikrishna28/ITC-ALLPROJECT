@@ -1,0 +1,106 @@
+package MileStonepackage;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
+
+public class Scneario3 {
+	WebDriver driver;
+	List<String> mainmenulist = new ArrayList<>();
+	private static final String FILE_PATH = "/home/zadmin/Desktop/TESTNG/TestNGProject/milestonewrite.txt"; // Update with your path
+
+	
+	@BeforeSuite
+	public void openurl() throws InterruptedException {
+		driver=new ChromeDriver();
+		driver.get("https://www.zebra.com/");
+		driver.manage().window().maximize();
+        Thread.sleep(1000);
+      
+       
+        WebElement checkbtn = driver.findElement(By.xpath("//button[text()='Accept Cookies']"));
+		
+		 ((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", checkbtn);
+
+		checkbtn.click();
+		
+		Thread.sleep(1000);
+		
+	}
+	
+	@Test(priority=2)
+	public void listurlsofmainmenu() throws Exception {
+		
+		WebElement navclass = driver.findElement(By.className("cmp-container__nav--navigation-items")); 
+	
+		 List<WebElement> elem =  navclass.findElements(By.tagName("span"));
+		 
+		 for(WebElement spanname:elem) {
+			 String text = spanname.getText();
+			    if (text != null && !text.trim().isEmpty()) {
+			        mainmenulist.add(text);
+			    }
+			
+		 }
+		 
+		 writeToFile("List of Main Menu Values");
+		
+		for(String mainmenuname :mainmenulist) {
+			System.out.println(mainmenuname);
+			writeToFile(mainmenuname);
+			String xpath = String.format("//span[text()='%s']", mainmenuname);
+			WebElement mainmenunameele = driver.findElement(By.xpath(xpath));
+			((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", mainmenunameele);
+			mainmenunameele.click();
+			Thread.sleep(1000);
+			
+		}
+	
+	}
+		
+		public void writeToFile(String content) {
+	        BufferedWriter writer = null;
+	        try {
+	            writer = new BufferedWriter(new FileWriter(FILE_PATH, true)); 
+	            writer.write(content);
+	            writer.newLine(); 
+	            System.out.println("Successfully wrote to the file: " + FILE_PATH);
+	        } catch (IOException e) {
+	            System.err.println("An error occurred while writing to the file: " + e.getMessage());
+	        } finally {
+	            try {
+	                if (writer != null) {
+	                    writer.close(); 
+	                }
+	            } catch (IOException e) {
+	                System.err.println("Failed to close the writer: " + e.getMessage());
+	            }
+	        }
+	    }	
+		
+		
+		
+		
+}
+
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+

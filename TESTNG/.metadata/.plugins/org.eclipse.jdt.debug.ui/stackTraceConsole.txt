@@ -1,0 +1,6 @@
+// Wait until the "Industry" span is visible
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+WebElement industryElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Industry']")));
+
+// Now click on it
+industryElement.click();

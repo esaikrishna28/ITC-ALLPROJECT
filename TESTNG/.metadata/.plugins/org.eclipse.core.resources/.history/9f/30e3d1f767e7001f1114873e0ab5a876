@@ -1,0 +1,75 @@
+package webdriveruniversity;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
+
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
+
+public class MenuExtract {
+    @Test
+    public void listurl() throws InterruptedException {
+        // System.setProperty("webdriver.chrome.driver", "path/to/chromedriver"); // Update with your path
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.zebra.com/");
+        driver.manage().window().maximize();
+        
+        
+        
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+
+        // Accept Cookies
+        WebElement checkbtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Accept Cookies']")));
+        checkbtn.click();
+
+        // Step 1: Retrieve Top Level Menu Items
+        List<String> topLevelItems = new ArrayList<>();
+        List<WebElement> topLevelElements = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
+                By.xpath("//div[contains(@class, 'navigation-item__first-level-item')]")
+        ));
+
+        for (WebElement topLevel : topLevelElements) {
+            String topLevelName = topLevel.getText();
+            topLevelItems.add(topLevelName);
+            System.out.println("Top Level: " + topLevelName);
+
+            // Step 2: Retrieve Second Level Items
+            topLevel.click(); // Click to open the second level menu
+            Thread.sleep(500); // Adjust wait time if necessary
+            
+            List<WebElement> secondLevelElements = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
+                    By.xpath("//div[@data-megamenu='" + topLevelName + "']//div[contains(@class, 'navigation-item__second-level-items')]")
+            ));
+
+            for (WebElement secondLevel : secondLevelElements) {
+                String secondLevelName = secondLevel.getText();
+                System.out.println("  Second Level: " + secondLevelName);
+
+                // Step 3: Retrieve Third Level Items
+                secondLevel.click(); // Click to open the third level menu
+                Thread.sleep(500); // Adjust wait time if necessary
+                
+                List<WebElement> thirdLevelElements = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
+                        By.xpath("//div[@data-third-level='" + secondLevel.getAttribute("data-second-level-key") + "']//div[contains(@class, 'navigation-item__menu-option')]")
+                ));
+
+                for (WebElement thirdLevel : thirdLevelElements) {
+                    String thirdLevelName = thirdLevel.getText();
+                    System.out.println("    Third Level: " + thirdLevelName);
+                }
+
+                // Navigate back to the second level if necessary (optional)
+            }
+
+            // Optionally close the second-level menu here
+        }
+
+        driver.quit();
+    }
+}

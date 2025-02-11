@@ -1,0 +1,17 @@
+package SampleSauseClasses;
+
+public class Sauce_demo_main {
+	
+public static void main(String[] args) {
+	
+	ChromeDriversetup.chromesetup();
+	System.out.println("webpage opened ");
+	Loginclass lg =new Loginclass();
+	lg.sendusername("standard_user");
+	lg.sendpassword("secret_sauce");
+	lg.loginclick();
+	
+}
+
+}
+

@@ -1,0 +1,43 @@
+package TestNgpackage;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+public class Checkbox_handling {
+	
+	WebDriver driver ; 
+	@BeforeClass 
+	public void launchurl () {
+		driver =new ChromeDriver();
+		driver.get("https://practice.expandtesting.com/checkboxes#google_vignette");
+		
+	}
+	
+	@Test 
+	public void checkbox() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(7));
+		WebElement checkbtn = driver.findElement(By.id("checkbox1"));
+		
+		 ((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", checkbtn);
+
+		
+		checkbtn.click();
+		
+	}
+	
+	
+	
+	
+
+}

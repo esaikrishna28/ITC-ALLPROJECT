@@ -1,0 +1,54 @@
+//package SampleSauseClasses;
+//
+//import org.openqa.selenium.By;
+//import org.openqa.selenium.WebDriver;
+//import org.openqa.selenium.WebElement;
+//
+//public class Sauce_demo_main {
+//	
+//public static void main(String[] args) {
+//	
+//	ChromeDriversetup.chromesetup();
+//	System.out.println("webpage opened ");
+//	Loginclass lg =new Loginclass();
+//	lg.sendusername("standard_user");
+//	lg.sendpassword("secret_sauce");
+//	lg.loginclick();
+//	
+//	WebDriver driver = null;
+//	
+//	driver.findElement(By.xpath("//input[@id='user-name']")).sendKeys("sai");
+//	
+//}
+//
+//}
+//
+
+package SampleSauseClasses;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Sauce_demo_main {
+    
+    public static void main(String[] args) {
+        System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
+        WebDriver driver = new ChromeDriver();
+        
+        try {
+            driver.manage().window().maximize();
+            driver.get("https://www.saucedemo.com/");
+            
+            Loginclass login = new Loginclass(driver); // Pass the driver instance here
+            login.sendUsername("your-username");
+            login.sendPassword("your-password");
+            login.loginClick();
+            
+            // Add assertions or further steps as required
+            
+        } finally {
+            driver.quit();
+        }
+    }
+}
+

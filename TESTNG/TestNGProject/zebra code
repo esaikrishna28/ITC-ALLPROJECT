@@ -1,0 +1,27 @@
+			//
+
+
+//			List<String>  pagemenu = new ArrayList<>();
+//			 WebElement navinpage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".anchor-navigation.container")));
+//			((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", navinpage);
+//			 List<WebElement> elem =  navinpage.findElements(By.tagName("a"));
+//
+//			 for(WebElement navitem:elem) {
+//				 System.out.println(navitem.getText());
+//				 pagemenu.add(navitem.getText());
+//			 }
+//
+//			System.out.println(pagemenu);
+//
+//			for(int i=1;i<pagemenu.size();i++) {
+//
+//				String xpath = String.format("//a[text()='%s']", pagemenu.get(i));
+//				System.out.println(xpath);
+//
+//				  WebElement setup1 = driver.findElement(By.xpath(xpath));
+//
+//					 ((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", checkbtn);
+//
+//					setup1.click();
+//					}
+

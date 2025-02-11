@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="master">
+<suite name="Suite">
+  <test name="Test">
+    <classes>
+      <class name="Annotations.Class1">
+        <methods>
+          <include name="beforesuite"></include>
+          <include name="aftersuite"></include>
+          <include name="beforetest"></include>
+          <include name="aftertest"></include>
+          <include name="beforemethods"></include>
+          <include name="aftermethod"></include>
+          <include name="test1"></include>
+          <include name="test2"></include>
+        </methods>
+      </class>
+      <class name="TestNgpackage.Saucedemo"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+<suite name="webdriveruniversity">
+  <test name="Testing">
+    <classes>
+      <class name="webdriveruniversity.Contactusform">
+        <methods>
+          <include name="urlopening"></include>
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>
+</suite>

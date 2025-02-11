@@ -1,0 +1,21 @@
+package SampleSauseClasses;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.openqa.selenium.WebDriver;
+
+public class Completeprocess {
+
+	WebDriver dri=null;
+	List<String> urllist=new ArrayList<>();
+	public void Completeprocess(WebDriver driver,List urllist) {
+		this.dri=driver;
+		
+	}
+	
+	
+	
+	
+	
+}

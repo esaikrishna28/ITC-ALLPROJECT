@@ -1,0 +1,50 @@
+package seleniumproject;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Launchawebsite {
+
+	public static void main(String[] args) {
+		
+//		System.setProperty("webdriver.chrome.driver","/home/zadmin/Desktop/Selenium webdriver/chromedriver-win64/chromedriver.exe");
+		WebDriver driver =new ChromeDriver();
+	
+		driver.manage().window().maximize();
+		
+		driver.get("https://demowebshop.tricentis.com/");
+		
+		
+		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
+		WebElement bookslink=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@href='/books']")));
+		bookslink.click();
+		System.out.println("buttons books has been clicksed ");
+		
+		
+		
+		
+		String title = driver.getTitle();
+		System.out.println(title);
+		
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@href='/books']")));
+		List<WebElement>allLinks=driver.findElements(By.xpath("//a"));
+		System.out.println("List of links on page:");
+		for(WebElement link:allLinks) {
+			String linkUrl=link.getAttribute("href");
+			if(linkUrl!=null) {
+				System.out.println(linkUrl);
+			}
+				
+         } 
+		
+//		driver.quit();
+	}
+	
+}

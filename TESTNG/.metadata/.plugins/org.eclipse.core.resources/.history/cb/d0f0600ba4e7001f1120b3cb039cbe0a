@@ -1,0 +1,21 @@
+package webdriveruniversity;
+private static final String SCREENSHOT_FOLDER = "/home/zadmin/Desktop/TESTNG/TestNGProject/screenshot/";
+private static final String REPORT_FOLDER = "/home/zadmin/Desktop/TESTNG/TestNGProject/testreport/";
+
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class ReportGenerator {
+
+   
+}

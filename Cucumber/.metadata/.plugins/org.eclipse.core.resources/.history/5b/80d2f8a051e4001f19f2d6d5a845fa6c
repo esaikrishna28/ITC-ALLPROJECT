@@ -1,0 +1,12 @@
+package cucumbertests;
+
+import org.openqa.selenium.WebDriver;
+
+public class login {
+
+	WebDriver driver = new WebDriver();
+	
+	
+	
+	
+}

@@ -1,0 +1,10 @@
+package webdriveruniversity;
+
+public class WEBelemntsclick {
+
+	public void elementclick() {
+		
+	}
+	
+	
+}

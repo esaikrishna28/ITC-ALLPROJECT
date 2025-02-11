@@ -1,0 +1,49 @@
+package Samplesaucedirect;
+
+import java.time.Duration;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Radiobutton {
+
+    public static void main(String[] args) {
+        
+        // Set the path to the ChromeDriver executable
+       // System.setProperty("webdriver.chrome.driver", "path_to_chromedriver");
+
+        // Initialize the WebDriver
+        WebDriver driver = new ChromeDriver();
+
+        // Maximize the browser window
+        driver.manage().window().maximize();
+
+        // Open the desired web page
+        driver.get("https://practice.expandtesting.com/radio-buttons");
+
+        // Locate the radio button using its XPath
+        WebElement radioButton = driver.findElement(By.xpath("//input[@id='red']"));
+
+        // Wait for the radio button to be clickable
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wait.until(ExpectedConditions.elementToBeClickable(radioButton));
+
+        // Scroll to the radio button if it's not in the viewport
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", radioButton);
+
+        // Attempt to click the radio button
+        try {
+            radioButton.click();
+        } catch (Exception e) {
+            // Fallback to JavaScript click
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", radioButton);
+        }
+
+        // Close the WebDriver
+        driver.quit();
+    }
+}

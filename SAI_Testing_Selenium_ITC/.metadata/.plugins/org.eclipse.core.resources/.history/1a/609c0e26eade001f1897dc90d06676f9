@@ -1,0 +1,69 @@
+//package SampleSauseClasses;
+//
+//import org.openqa.selenium.By;
+//import org.openqa.selenium.WebDriver;
+//
+//public class Loginclass {
+//	
+//	WebDriver driver;
+//	String usernameid,passwordid,loginid;
+//	
+//	public  Loginclass(){
+//		this.usernameid="user-name";
+//		this.passwordid="password";
+//		this.loginid="login-button";
+//		System.out.println("instiation done ");
+//		this.driver=driver;
+//		System.out.println(usernameid);
+//		
+//	}
+//	
+//	public void sendusername(String username) {
+//		System.out.println("sending user name ");
+//		this.driver.findElement(By.id(usernameid)).sendKeys(username);
+//		
+//	}
+//	
+//	public void sendpassword(String pass) {
+//		this.driver.findElement(By.id(passwordid)).sendKeys(pass);
+//		
+//	}
+//	
+//	public void loginclick() {
+//		this.driver.findElement(By.id(loginid)).click();
+//	}
+//	
+//}
+
+package SampleSauseClasses;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class Loginclass {
+    
+    WebDriver driver;
+    String usernameid, passwordid, loginid;
+    
+    public Loginclass(WebDriver driver) {
+        this.driver = driver;
+        this.usernameid = "user-name";
+        this.passwordid = "password";
+        this.loginid = "login-button";
+        System.out.println("Instantiation done ");
+        System.out.println(usernameid);
+    }
+    
+    public void sendUsername(String username) {
+        this.driver.findElement(By.id(usernameid)).sendKeys(username);
+    }
+    
+    public void sendPassword(String pass) {
+        this.driver.findElement(By.id(passwordid)).sendKeys(pass);
+    }
+    
+    public void loginClick() {
+        this.driver.findElement(By.id(loginid)).click();
+    }
+}
+

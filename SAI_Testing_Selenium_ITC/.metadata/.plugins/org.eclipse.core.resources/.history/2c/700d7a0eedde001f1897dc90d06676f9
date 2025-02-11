@@ -1,0 +1,30 @@
+package SampleSauseClasses;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Sauce_demo_main {
+	
+public static void main(String[] args) {
+	
+
+	WebDriver dr=null;
+	System.out.println("webpage opened ");
+	Loginclass lg =new Loginclass();
+	lg.sendusername("standard_user");
+	lg.sendpassword("secret_sauce");
+	lg.loginclick();
+	
+	
+//	driver.findElement(By.xpath("//input[@id='user-name']")).sendKeys("sda");
+	
+	
+
+}
+
+}
+

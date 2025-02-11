@@ -1,0 +1,32 @@
+package SampleSauseClasses;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class Loginclass {
+	
+	WebDriver driver;
+	String usernameid,passwordid,loginid;
+	
+	public  Loginclass(){
+		this.usernameid="user-name";
+		this.passwordid="password";
+		this.loginid="login-button";
+		
+	}
+	
+	public void sendusername(String username) {
+		driver.findElement(By.id(usernameid)).sendKeys(username);
+		
+	}
+	
+	public void sendpassword(String pass) {
+		driver.findElement(By.id(passwordid)).sendKeys(pass);
+		
+	}
+	
+	public void loginclick() {
+		driver.findElement(By.id(loginid)).click();
+	}
+	
+}

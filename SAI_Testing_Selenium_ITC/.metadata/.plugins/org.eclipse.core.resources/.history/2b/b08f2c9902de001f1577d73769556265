@@ -1,0 +1,10 @@
+package seleniumproject;
+
+public class Launchawebsite {
+
+	public static void main(String[] args) {
+		WebDriver driver =new ChromeDriver();
+		
+	}
+	
+}

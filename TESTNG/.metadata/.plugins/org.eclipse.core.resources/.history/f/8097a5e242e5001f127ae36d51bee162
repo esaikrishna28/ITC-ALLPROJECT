@@ -1,0 +1,81 @@
+package webdriveruniversity;
+
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+public class zebra4 {
+    WebDriver driver;
+    WebDriverWait wait;
+    List<String> mainmenulist4 = new ArrayList<>();
+
+    @BeforeClass
+    public void setUp() {
+       //System.setProperty("webdriver.chrome.driver", "path/to/chromedriver"); // Update with your path
+        driver = new ChromeDriver();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        driver.manage().window().maximize();
+    }
+
+    @Test
+    public void runmenu() throws InterruptedException {
+        driver.get("https://www.zebra.com/");
+        Thread.sleep(1000);
+
+        WebElement checkbtn = driver.findElement(By.xpath("//button[text()='Accept Cookies']"));
+        ((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", checkbtn);
+        checkbtn.click();
+        Thread.sleep(1000);
+
+        // Wait until megamenu sections are visible
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.navigation-item.megamenu-section")));
+        List<WebElement> megamenuSections = driver.findElements(By.cssSelector("div.navigation-item.megamenu-section"));
+
+        // Ensure there are at least 6 sections to avoid IndexOutOfBoundsException
+        if (megamenuSections.size() >= 6) {
+            for (int i = 0; i < 6; i++) {
+                // Access the current megamenu section
+                WebElement megamenusection = megamenuSections.get(i);
+                System.out.println("Processing section " + (i + 1) + ": " + megamenusection.getText());
+
+                // Find all second-level items within the current megamenu section
+                List<WebElement> secondLevelItems = megamenusection.findElements(By.cssSelector("div.navigation-item.second-level-items"));
+
+                for (WebElement secondLevelItem : secondLevelItems) {
+                    // Find span elements within each second-level item
+                    List<WebElement> spans = secondLevelItem.findElements(By.cssSelector("span.navigation-item.second-lvl-label"));
+                    
+                    for (WebElement span : spans) {
+                        String text = span.getText();
+                        if (text != null && !text.trim().isEmpty()) {
+                            System.out.println("Span text: " + text);
+                            mainmenulist4.add(text);
+                        }
+                    }
+                }
+
+                // Print the current state of mainmenulist4 after processing each section
+                System.out.println("After processing section " + (i + 1) + ": " + mainmenulist4);
+            }
+        } else {
+            System.out.println("There are less than six megamenu sections available.");
+        }
+    }
+
+    @AfterClass
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+}

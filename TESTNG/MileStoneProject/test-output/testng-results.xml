@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-02-11T14:01:25 IST" name="Default suite" finished-at="2025-02-11T14:02:53 IST" duration-ms="88227">
+    <groups>
+    </groups>
+    <test started-at="2025-02-11T14:01:25 IST" name="Default test" finished-at="2025-02-11T14:02:53 IST" duration-ms="88227">
+      <class name="MileStonepackage.Scneario3">
+        <test-method signature="openurl()[pri:1, instance:MileStonepackage.Scneario3@223191a6]" started-at="2025-02-11T14:01:25 IST" name="openurl" finished-at="2025-02-11T14:01:44 IST" duration-ms="19145" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openurl -->
+        <test-method signature="listurlsofmainmenu()[pri:2, instance:MileStonepackage.Scneario3@223191a6]" started-at="2025-02-11T14:01:44 IST" name="listurlsofmainmenu" finished-at="2025-02-11T14:02:00 IST" duration-ms="15394" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- listurlsofmainmenu -->
+        <test-method signature="softwaremenunav()[pri:3, instance:MileStonepackage.Scneario3@223191a6]" started-at="2025-02-11T14:02:00 IST" name="softwaremenunav" finished-at="2025-02-11T14:02:24 IST" duration-ms="24152" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- softwaremenunav -->
+        <test-method signature="capturenavitems()[pri:4, instance:MileStonepackage.Scneario3@223191a6]" started-at="2025-02-11T14:02:24 IST" name="capturenavitems" finished-at="2025-02-11T14:02:28 IST" duration-ms="4503" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- capturenavitems -->
+        <test-method signature="zerotouch()[pri:5, instance:MileStonepackage.Scneario3@223191a6]" started-at="2025-02-11T14:02:28 IST" name="zerotouch" finished-at="2025-02-11T14:02:53 IST" duration-ms="24980" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- zerotouch -->
+        <test-method is-config="true" signature="closedriver()[pri:0, instance:MileStonepackage.Scneario3@223191a6]" started-at="2025-02-11T14:02:53 IST" name="closedriver" finished-at="2025-02-11T14:02:53 IST" duration-ms="197" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closedriver -->
+      </class> <!-- MileStonepackage.Scneario3 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

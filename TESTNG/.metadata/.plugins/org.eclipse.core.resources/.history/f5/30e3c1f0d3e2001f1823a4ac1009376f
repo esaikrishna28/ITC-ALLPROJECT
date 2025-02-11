@@ -1,0 +1,46 @@
+package webdriveruniversity;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
+
+public class Contactusform {
+	WebDriver driver; 
+	@BeforeSuite
+	public void urlopening() throws InterruptedException {
+	
+		
+		driver = new ChromeDriver();
+		driver.get("https://webdriveruniversity.com/Contact-Us/contactus.html");
+		driver.manage().window().maximize();
+		
+		Thread.sleep(1000);		
+		
+	}
+	
+	@Test
+	public void adddata() throws InterruptedException {
+		driver.findElement(By.name("first_name")).sendKeys("sai krishna");
+		Thread.sleep(1000);
+		driver.findElement(By.name("last_name")).sendKeys("ellur");
+		Thread.sleep(1000);
+		driver.findElement(By.name("email")).sendKeys("ellursai9@gmail.com");
+		Thread.sleep(1000);
+		
+		driver.findElement(By.xpath("message")).sendKeys("helloboyd ");
+		Thread.sleep(1000);
+	}
+	@Test
+	public void submit() throws InterruptedException {
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//input[@type='submit']")).click();
+	}
+	
+	
+	
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;MileStonepackage.Scneario2&apos; to &apos;Scneario3&apos;&#x0A;- Original project: &apos;MileStoneProject&apos;&#x0A;- Original element: &apos;MileStonepackage.Scneario2&apos;&#x0A;- Renamed element: &apos;MileStonepackage.Scneario3&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Scneario2&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/&lt;MileStonepackage{Scneario2.java[Scneario2" matchStrategy="1" name="Scneario3" qualified="false" references="true" similarDeclarations="false" stamp="1738831595807" textual="false" version="1.0"/>
+</session>

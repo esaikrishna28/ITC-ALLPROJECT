@@ -1,0 +1,24 @@
+package SampleSauseClasses;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.openqa.selenium.WebDriver;
+
+public class Completeprocess {
+
+	WebDriver dri=null;
+	List<String> urllist=new ArrayList<>();
+	public Completeprocess(WebDriver driver, List<String> urllist2) {
+		// TODO Auto-generated constructor stub
+		this.dri=driver;
+		this.urllist=urllist;
+		
+	}
+	
+	
+	
+	
+	
+	
+}

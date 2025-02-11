@@ -1,0 +1,11 @@
+package testingapipack;
+
+public class getrequest {
+
+	public void setup() {
+		RestAssured.baseURI="";
+	}
+	
+	
+	
+}

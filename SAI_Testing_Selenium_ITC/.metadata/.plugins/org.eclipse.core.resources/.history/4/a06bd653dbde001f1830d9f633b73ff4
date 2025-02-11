@@ -1,0 +1,9 @@
+package SampleSauseClasses;
+
+public class Loginclass {
+	
+	public static void main(String[] args) {
+		ChromeDriversetup.chromesetup();
+	}
+
+}

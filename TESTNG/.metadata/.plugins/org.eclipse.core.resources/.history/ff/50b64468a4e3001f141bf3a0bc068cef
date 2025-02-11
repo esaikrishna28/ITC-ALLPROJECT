@@ -1,0 +1,13 @@
+package assessment;
+
+import org.testng.annotations.Test;
+
+public class Scenario1 {
+
+	@Test
+	public void launchurl() {
+		
+	}
+	
+	
+}

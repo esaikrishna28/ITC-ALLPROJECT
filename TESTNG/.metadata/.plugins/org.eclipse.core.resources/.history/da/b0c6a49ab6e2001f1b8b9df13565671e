@@ -1,0 +1,16 @@
+package Annotations;
+
+import org.testng.annotations.*;
+
+public class Class1 {
+
+	@BeforeSuite
+	public void beforesuit() {
+		System.out.println("before suite has been exceuted ");
+	}
+	
+	
+	
+	
+	
+}

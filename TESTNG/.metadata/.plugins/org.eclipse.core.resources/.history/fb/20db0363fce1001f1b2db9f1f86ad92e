@@ -1,0 +1,33 @@
+package TestNgpackage;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+public class Checkbox_handling {
+	
+	WebDriver driver ; 
+	@BeforeClass 
+	public void launchurl () {
+		driver =new ChromeDriver();
+		driver.get("https://practice.expandtesting.com/checkboxes#google_vignette");
+		
+	}
+	
+	@Test 
+	public void checkbox() {
+
+		WebElement checkbtn = driver.findElement(By.id("checkbox1"));
+		
+		checkbtn.click();
+		
+	}
+	
+	
+	
+	
+
+}

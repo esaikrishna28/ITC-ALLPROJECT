@@ -1,0 +1,21 @@
+package seleniumproject;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Webpageopen {
+
+public static void main(String[] args) {
+	String baseurl="https://www.facebook.com";
+	WebDriver driver;
+	driver=new ChromeDriver();
+	driver.manage().window().fullscreen();
+	driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+	driver.get(baseurl);
+	
+	
+}
+
+}

@@ -1,0 +1,17 @@
+package SampleSauseClasses;
+
+import org.openqa.selenium.WebDriver;
+
+public class Completeprocess {
+
+	WebDriver dri=null;
+	public void completeprocess(WebDriver driver) {
+		this.dri=driver;
+		
+	}
+	
+	
+	
+	
+	
+}

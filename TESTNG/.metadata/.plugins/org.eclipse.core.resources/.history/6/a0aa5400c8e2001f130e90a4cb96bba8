@@ -1,0 +1,26 @@
+package webdriveruniversity;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeSuite;
+
+public class Contactusform {
+	
+	@BeforeSuite
+	public void urlopening() {
+	
+		WebDriver driver; 
+		driver = new ChromeDriver();
+		driver.get("https://webdriveruniversity.com/Contact-Us/contactus.html");
+		driver.manage().window().fullscreen();
+		
+		driver.manage().timeouts().implicitlyWait(4,TimeUnit.SECONDS);
+		
+		
+	}
+	
+	
+	
+}

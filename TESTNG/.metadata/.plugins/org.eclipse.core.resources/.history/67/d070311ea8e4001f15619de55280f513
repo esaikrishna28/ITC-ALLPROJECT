@@ -1,0 +1,52 @@
+package webdriveruniversity;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class zebra {
+
+	WebDriver driver;
+	
+	
+	//zbr-header__first-level-label
+	
+	//driver.findElement().click();
+	
+	@Test
+	public void openurl() throws InterruptedException {
+		driver=new ChromeDriver();
+		driver.get("https://www.zebra.com/");
+		driver.manage().window().maximize();
+        Thread.sleep(1000);
+      
+       
+        WebElement checkbtn = driver.findElement(By.xpath("//button[text()='Accept Cookies']"));
+		
+		 ((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", checkbtn);
+
+		checkbtn.click();
+		
+		Thread.sleep(1000);
+		
+		WebElement sftbtn = driver.findElement(By.xpath("//span[text()='Software']/parent::div"));
+		
+		 ((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", sftbtn);
+
+		sftbtn.click();
+		
+		
+
+    
+
+		
+	}
+	
+	
+	
+}

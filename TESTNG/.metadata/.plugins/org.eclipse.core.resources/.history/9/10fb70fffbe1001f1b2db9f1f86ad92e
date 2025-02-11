@@ -1,0 +1,20 @@
+package TestNgpackage;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeClass;
+
+public class Checkbox_handling {
+	
+	WebDriver driver ; 
+	@BeforeClass 
+	public void launchurl () {
+	
+		driver.get("");
+		
+	}
+	
+	
+	
+	
+
+}

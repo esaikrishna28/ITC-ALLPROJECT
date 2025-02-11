@@ -1,0 +1,23 @@
+package webdriveruniversity;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeMethod;
+
+public class zebra {
+
+	WebDriver driver;
+	driver=new ChromeDriver();
+	
+	//zbr-header__first-level-label
+	
+	@BeforeMethod
+	public void openurl() {
+		
+		driver.get("https://www.zebra.com/");
+		
+	}
+	
+	
+	
+}
