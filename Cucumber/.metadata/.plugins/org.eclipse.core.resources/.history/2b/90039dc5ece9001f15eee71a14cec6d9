@@ -1,0 +1,23 @@
+package cucumbertests;
+
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
+
+@CucumberOptions(
+features={"src/test/resources/webshoploginall.feature","src/test/resources/login.feature"},
+glue="cucumbertests",
+plugin = {
+	    "pretty",  // Prints the test execution progress in the console
+	    "json:target/cucumber-reports/cucumber.json",  // Generates JSON report
+	    "html:target/cucumber-reports/cucumber.html",  // Generates HTML report
+	    "com.github.mkolisnyk.cucumber.reporting.CucumberReporter"  // This is the cucumber report generator
+	  }
+		
+		
+)
+
+
+
+public class TestRunnerClass extends AbstractTestNGCucumberTests {
+
+}

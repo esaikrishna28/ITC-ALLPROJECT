@@ -39,6 +39,7 @@ public class Contactusform {
         extent.attachReporter(spark);
        
     }
+    
     @Test
     public void adddata() throws InterruptedException {
     	test = extent.createTest("My First Test");

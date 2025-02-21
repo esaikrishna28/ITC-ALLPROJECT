@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="5" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-02-21T08:48:33 UTC" name="Suite" finished-at="2025-02-21T08:50:03 UTC" duration-ms="89865">
+    <groups>
+    </groups>
+    <test started-at="2025-02-21T08:48:33 UTC" name="Test" finished-at="2025-02-21T08:50:03 UTC" duration-ms="89865">
+      <class name="MileStonepackage.Scneario3">
+        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:MileStonepackage.Scneario3@1622f1b]" started-at="2025-02-21T08:48:33 UTC" name="setup" finished-at="2025-02-21T08:48:49 UTC" duration-ms="15758" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@6e3dd5ce]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="openurl()[pri:1, instance:MileStonepackage.Scneario3@1622f1b]" started-at="2025-02-21T08:48:49 UTC" name="openurl" finished-at="2025-02-21T08:48:52 UTC" duration-ms="2987" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openurl -->
+        <test-method signature="listurlsofmainmenu()[pri:2, instance:MileStonepackage.Scneario3@1622f1b]" started-at="2025-02-21T08:48:52 UTC" name="listurlsofmainmenu" finished-at="2025-02-21T08:49:06 UTC" duration-ms="13997" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- listurlsofmainmenu -->
+        <test-method signature="softwaremenunav()[pri:3, instance:MileStonepackage.Scneario3@1622f1b]" started-at="2025-02-21T08:49:06 UTC" name="softwaremenunav" finished-at="2025-02-21T08:49:29 UTC" duration-ms="22238" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- softwaremenunav -->
+        <test-method signature="capturenavitems()[pri:4, instance:MileStonepackage.Scneario3@1622f1b]" started-at="2025-02-21T08:49:29 UTC" name="capturenavitems" finished-at="2025-02-21T08:49:33 UTC" duration-ms="4124" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- capturenavitems -->
+        <test-method signature="zerotouch(java.lang.String)[pri:5, instance:MileStonepackage.Scneario3@1622f1b]" started-at="2025-02-21T08:49:33 UTC" name="zerotouch" finished-at="2025-02-21T08:49:57 UTC" duration-ms="24340" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Sygic Fleet GPS Navigation]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- zerotouch -->
+        <test-method is-config="true" signature="closedriver()[pri:0, instance:MileStonepackage.Scneario3@1622f1b]" started-at="2025-02-21T08:49:57 UTC" name="closedriver" finished-at="2025-02-21T08:49:58 UTC" duration-ms="649" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closedriver -->
+      </class> <!-- MileStonepackage.Scneario3 -->
+      <class name="MileStonepackage.POMsecondscneario">
+        <test-method is-config="true" signature="openurlagain(org.testng.ITestContext)[pri:0, instance:MileStonepackage.POMsecondscneario@34b7ac2f]" started-at="2025-02-21T08:49:58 UTC" name="openurlagain" finished-at="2025-02-21T08:50:02 UTC" duration-ms="4448" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@6e3dd5ce]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openurlagain -->
+        <test-method signature="clickcookies()[pri:0, instance:MileStonepackage.POMsecondscneario@34b7ac2f]" started-at="2025-02-21T08:50:02 UTC" name="clickcookies" finished-at="2025-02-21T08:50:03 UTC" duration-ms="61" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//button[text()='Accept Cookie']"}
+  (Session info: chrome=133.0.6943.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.28.1', revision: '73f5ad48a2'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [114b968ed582287d77bf7530d94d7dc6, findElement {using=xpath, value=//button[text()='Accept Cookie']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59244}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59244/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 114b968ed582287d77bf7530d94d7dc6]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[text()='Accept Cookie']"}
+  (Session info: chrome=133.0.6943.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.28.1', revision: '73f5ad48a2'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [114b968ed582287d77bf7530d94d7dc6, findElement {using=xpath, value=//button[text()='Accept Cookie']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59244}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59244/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 114b968ed582287d77bf7530d94d7dc6
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy13.click(Unknown Source)
+at MileStonepackage.Zebaraopenerpom.clickAcceptCookies(Zebaraopenerpom.java:25)
+at MileStonepackage.POMsecondscneario.clickcookies(POMsecondscneario.java:33)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickcookies -->
+        <test-method is-config="true" signature="closeurlagain()[pri:0, instance:MileStonepackage.POMsecondscneario@34b7ac2f]" started-at="2025-02-21T08:50:03 UTC" name="closeurlagain" finished-at="2025-02-21T08:50:03 UTC" duration-ms="243" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeurlagain -->
+      </class> <!-- MileStonepackage.POMsecondscneario -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

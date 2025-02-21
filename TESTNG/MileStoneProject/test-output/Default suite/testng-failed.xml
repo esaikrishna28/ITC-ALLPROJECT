@@ -5,8 +5,12 @@
     <classes>
       <class name="MileStonepackage.Scneario3">
         <methods>
+          <include name="softwaremenunav"/>
+          <include name="setup"/>
           <include name="closedriver"/>
+          <include name="listurlsofmainmenu"/>
           <include name="zerotouch"/>
+          <include name="openurl"/>
         </methods>
       </class> <!-- MileStonepackage.Scneario3 -->
     </classes>

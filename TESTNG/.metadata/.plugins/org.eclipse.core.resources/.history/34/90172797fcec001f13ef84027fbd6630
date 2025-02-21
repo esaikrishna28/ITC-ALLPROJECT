@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="webdriveruniversity.softwarenavig"/>
+      <class name="webdriveruniversity.MenuExtract"/>
+      <class name="webdriveruniversity.Zebra5"/>
+      <class name="webdriveruniversity.Languagecapture"/>
+      <class name="webdriveruniversity.Filewriteclass"/>
+      <class name="webdriveruniversity.WEBelemntsclick"/>
+      <class name="TestNgpackage.Saucedemo"/>
+      <class name="webdriveruniversity.Zebra2"/>
+      <class name="webdriveruniversity.zebra4"/>
+      <class name="webdriveruniversity.Contactusform"/>
+      <class name="Annotations.Class1"/>
+      <class name="TestNgpackage.Checkbox_handling"/>
+      <class name="webdriveruniversity.zebra"/>
+      <class name="webdriveruniversity.listallh5"/>
+      <class name="TestNgpackage.launchurl"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

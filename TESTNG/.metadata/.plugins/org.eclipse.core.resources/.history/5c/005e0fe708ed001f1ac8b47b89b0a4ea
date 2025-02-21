@@ -1,0 +1,27 @@
+package pageobejctmodel;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Listeners;
+
+@Listeners(TestListener.class)
+public class Zebaraopenerpom {
+	WebDriver driver;
+
+    // Locate the Accept Cookies button using @FindBy annotation
+    @FindBy(xpath = "//button[text()='Accept Cookies']")
+    WebElement acceptCookiesButton;
+
+    // Constructor to initialize the elements using PageFactory
+    public Zebaraopenerpom(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
+
+    // Method to click on the Accept Cookies button
+    public void clickAcceptCookies() {
+        acceptCookiesButton.click();
+    }
+}

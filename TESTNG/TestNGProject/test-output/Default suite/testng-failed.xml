@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="webdriveruniversity.Contactusform">
+      <class name="pageobejctmodel.Saucedemo">
         <methods>
-          <include name="tearDown"/>
-          <include name="submitWithoutData"/>
-          <include name="adddata"/>
-          <include name="urlopening"/>
+          <include name="completeaction"/>
+          <include name="setup"/>
+          <include name="closedriver"/>
         </methods>
-      </class> <!-- webdriveruniversity.Contactusform -->
+      </class> <!-- pageobejctmodel.Saucedemo -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

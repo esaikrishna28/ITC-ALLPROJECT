@@ -28,26 +28,55 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.ITestContext;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 import MileStonepackage.ReportGenerator;
 
+@Listeners(TestListener.class)
 public class Scneario3 {
 	WebDriver driver;
 	List<String> mainmenulist = new ArrayList<>();
-	private static final String FILE_PATH = "/home/zadmin/Desktop/TESTNG/MileStoneProject/Milestonenotepad.txt"; 
+	private static final String FILE_PATH = "C:\\Users\\I19-labuser151440\\Desktop\\ALL PRojects\\ITC-ALLPROJECT\\TESTNG\\MileStoneProject/Milestonenotepad.txt"; 
 	private WebDriverWait wait;
 	 private ReportGenerator reportGenerator;
-
+	
+	 
+	 @BeforeClass
+	    public void setup(ITestContext context) {
+		
+	    	// System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+	        driver = new ChromeDriver();
+	        driver.get("https://www.zebra.com/us/en.html");   
+	        System.out.println("WebDriver initialized and navigated to zebra.com");
+	        // Store the WebDriver instance in the context for the listener
+	        context.setAttribute("driver", driver);
+	  
+	    }
+	 
+	
+	
 	@Test(priority=1)
 	public void openurl() throws InterruptedException {
 		String screenshotPath = "";
         boolean isSuccess = true;
+       
 		try {
-		driver=new ChromeDriver();
-		driver.get("https://www.zebra.com/");
+			
+		//driver=new ChromeDriver();
+		//driver.get("https://www.zebra.com/");
 		driver.manage().window().maximize();
         Thread.sleep(1000);
         
@@ -63,12 +92,20 @@ public class Scneario3 {
 		Thread.sleep(1000);
 		wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 		
+		
 		}catch (Exception e) {
             isSuccess = false; // Mark as failed if an exception occurs
             e.printStackTrace();
-            
+            screenshotPath = reportGenerator.captureScreenshot("TestCase1_Failure");
+            Assert.fail("Test failed due to exception: " + e.getMessage());
         } finally {
-            reportGenerator.addReportEntry("Launch the Url \n 1 Launch the Home page url in the chrome \n 2 Accept the cookies displayed on the screen ", isSuccess, screenshotPath);
+            //reportGenerator.addReportEntry("Launch the Url \n 1 Launch the Home page url in the chrome \n 2 Accept the cookies displayed on the screen ", isSuccess, screenshotPath);
+        	if (isSuccess) {
+                reportGenerator.addReportEntry("Launch the Url \n 1 Launch the Home page url in the chrome \n 2 Accept the cookies displayed on the screen ", isSuccess, screenshotPath);
+            } else {
+                // If the test failed, log as failure with the relevant information
+                reportGenerator.addReportEntry("Launch the Url \n 1 Launch the Home page url in the chrome \n 2 Accept the cookies displayed on the screen ", false, screenshotPath);
+            }
         }
 		
 		
@@ -78,6 +115,7 @@ public class Scneario3 {
 	public void listurlsofmainmenu() throws Exception {
 		String screenshotPath = "";
         boolean isSuccess = true;
+       
 		try {
 		WebElement navclass = driver.findElement(By.className("cmp-container__nav--navigation-items")); 
 	
@@ -97,7 +135,9 @@ public class Scneario3 {
 			System.out.println(mainmenuname);
 			writeToFile("First Level menu is :");
 			writeToFile(mainmenuname);
+			//calling second level of menu items 
 			 getSecondLevelItems(mainmenuname);
+			 
 			String xpath = String.format("//span[text()='%s']", mainmenuname);
 			WebElement mainmenunameele = driver.findElement(By.xpath(xpath));
 			((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", mainmenunameele);
@@ -109,11 +149,22 @@ public class Scneario3 {
 		}
 		
 		}catch (Exception e) {
-            isSuccess = false; // Mark as failed if an exception occurs
+            isSuccess = false; 
             e.printStackTrace();
-           
+            screenshotPath = reportGenerator.captureScreenshot("TestCase2_Failure");
+            Assert.fail("Test failed due to exception: " + e.getMessage());
         } finally {
-            reportGenerator.addReportEntry("Main Menu Navigation \n 1 Capture the top level menu and store in file \n 2 Capture the Second Level menu and store in file  ", isSuccess, screenshotPath);
+          //  reportGenerator.addReportEntry("Main Menu Navigation \n 1 Capture the top level menu and store in file \n 2 Capture the Second Level menu and store in file  ", isSuccess, screenshotPath);
+        
+            if (isSuccess) {
+            	 reportGenerator.addReportEntry("Main Menu Navigation \n 1 Capture the top level menu and store in file \n 2 Capture the Second Level menu and store in file  ", isSuccess, screenshotPath);
+                  
+            } else {
+               
+            	 reportGenerator.addReportEntry("Main Menu Navigation \n 1 Capture the top level menu and store in file \n 2 Capture the Second Level menu and store in file  ", false, screenshotPath);
+                 
+            }
+        
         }
 	}
 	
@@ -121,6 +172,7 @@ public class Scneario3 {
 	public void softwaremenunav() throws Exception {
 		String screenshotPath = "";
         boolean isSuccess = true;
+     
 		try {
 		WebElement sftbtn = driver.findElement(By.xpath("//span[text()='Software']"));
 		((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", sftbtn);
@@ -146,9 +198,21 @@ public class Scneario3 {
 		}catch (Exception e) {
             isSuccess = false; // Mark as failed if an exception occurs
             e.printStackTrace();
-           
+            screenshotPath = reportGenerator.captureScreenshot("TestCase3_Failure");
+            Assert.fail("Test failed due to exception: " + e.getMessage());
         } finally {
-            reportGenerator.addReportEntry("Navigate to Mobile computer Sowtfare page \n 1 Select the Software option in main menu \n 2 Choose device Software \n Under device software choose Mobile Computer Software option ", isSuccess, screenshotPath);
+//            reportGenerator.addReportEntry("Navigate to Mobile computer Sowtfare page \n 1 Select the Software option in main menu \n 2 Choose device Software \n Under device software choose Mobile Computer Software option ", isSuccess, screenshotPath);
+//       
+            if (isSuccess) {
+            	  reportGenerator.addReportEntry("Navigate to Mobile computer Sowtfare page \n 1 Select the Software option in main menu \n 2 Choose device Software \n Under device software choose Mobile Computer Software option ", isSuccess, screenshotPath);
+                  
+            } else {
+               
+            	  reportGenerator.addReportEntry("Navigate to Mobile computer Sowtfare page \n 1 Select the Software option in main menu \n 2 Choose device Software \n Under device software choose Mobile Computer Software option ", false, screenshotPath);
+                  
+            }
+        
+        
         }
 		
 	}
@@ -157,12 +221,14 @@ public class Scneario3 {
 	public void capturenavitems() throws InterruptedException {
 		String screenshotPath = "";
         boolean isSuccess = true;
+       
         try {
 		
 		writeToFile("\n");
 		writeToFile("The Sub Navigation menu at Mobile-Computer-Software is  ");
 		
 		writeToFile("List of options Availabe under Set Up");
+		//calling the list all h5 functions 
 		listAllH5("setup");
 		
 		writeToFile("List of options Availabe under Secure and Manage");
@@ -177,20 +243,34 @@ public class Scneario3 {
 		listAllH5("additional");
 		Thread.sleep(1000);
 		screenshotPath = reportGenerator.captureScreenshot("TestCase4");
+		
         }catch (Exception e) {
             isSuccess = false; // Mark as failed if an exception occurs
             e.printStackTrace();
-            
+            screenshotPath = reportGenerator.captureScreenshot("TestCase4_Failure");
+            Assert.fail("Test failed due to exception: " + e.getMessage());
         } finally {
-            reportGenerator.addReportEntry("Mobile Computer Software \n 1 Scroll the page entirely \n 2 Navigate to the diffent section availabe at the page \n 3 Store all the sub menus of Set up ,Secure and Manage,Additional Software & optimize   ", isSuccess, screenshotPath);
+//            reportGenerator.addReportEntry("Mobile Computer Software \n 1 Scroll the page entirely \n 2 Navigate to the diffent section availabe at the page \n 3 Store all the sub menus of Set up ,Secure and Manage,Additional Software & optimize   ", isSuccess, screenshotPath);
+//       
+            if (isSuccess) {
+            	 reportGenerator.addReportEntry("Mobile Computer Software \n 1 Scroll the page entirely \n 2 Navigate to the diffent section availabe at the page \n 3 Store all the sub menus of Set up ,Secure and Manage,Additional Software & optimize   ", isSuccess, screenshotPath);
+                   
+            } else {
+            	 reportGenerator.addReportEntry("Mobile Computer Software \n 1 Scroll the page entirely \n 2 Navigate to the diffent section availabe at the page \n 3 Store all the sub menus of Set up ,Secure and Manage,Additional Software & optimize   ", false, screenshotPath);
+                 
+            
+            }
+        
         }
 	
 	}
 	
+	@Parameters({"searchinput"})
 	@Test(priority=5)
-	public void zerotouch() throws InterruptedException {
+	public void zerotouch(String searchinput) throws InterruptedException {
 		String screenshotPath = "";
         boolean isSuccess = true;
+       
 		try {
 		 captureScreenshot();
 		String h5Text = "Zebra Zero Touch"; 
@@ -214,7 +294,7 @@ public class Scneario3 {
         
         WebElement inputField = waits1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Search by name or keyword']")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", inputField);
-        inputField.sendKeys("Sygic Fleet GPS Navigation"); captureScreenshot();
+        inputField.sendKeys(searchinput); captureScreenshot();
         Thread.sleep(1000);
         inputField.sendKeys(Keys.ENTER); captureScreenshot();
         Thread.sleep(1000);
@@ -232,13 +312,25 @@ public class Scneario3 {
        
         captureScreenshot();
         
-        
+       
 		}catch (Exception e) {
             isSuccess = false; // Mark as failed if an exception occurs
             e.printStackTrace();
-           
+            screenshotPath = reportGenerator.captureScreenshot("TestCase5_Failure");
+            Assert.fail("Test failed due to exception: " + e.getMessage());
         } finally {
-            reportGenerator.addReportEntry("Zebra Zero Touch \n  1 Land on the Zebra Zero Touch Page \n 2 Select Find a Partner option on the page \n 3 Click on Partner Apps and offerings \n 4 Enter the input and click on the search button \n 5 Once results are loaded click on View Profile button \n 6 Back to home page ", isSuccess, screenshotPath);
+//            reportGenerator.addReportEntry("Zebra Zero Touch \n  1 Land on the Zebra Zero Touch Page \n 2 Select Find a Partner option on the page \n 3 Click on Partner Apps and offerings \n 4 Enter the input and click on the search button \n 5 Once results are loaded click on View Profile button \n 6 Back to home page ", isSuccess, screenshotPath);
+//       
+            if (isSuccess) {
+            	 reportGenerator.addReportEntry("Zebra Zero Touch \n  1 Land on the Zebra Zero Touch Page \n 2 Select Find a Partner option on the page \n 3 Click on Partner Apps and offerings \n 4 Enter the input and click on the search button \n 5 Once results are loaded click on View Profile button \n 6 Back to home page ", isSuccess, screenshotPath);
+                 
+            } else {
+               
+            	 reportGenerator.addReportEntry("Zebra Zero Touch \n  1 Land on the Zebra Zero Touch Page \n 2 Select Find a Partner option on the page \n 3 Click on Partner Apps and offerings \n 4 Enter the input and click on the search button \n 5 Once results are loaded click on View Profile button \n 6 Back to home page ", false, screenshotPath);
+                 
+            }
+        
+        
         }
 
 		
@@ -356,23 +448,52 @@ public class Scneario3 {
 		    TakesScreenshot ts = (TakesScreenshot) driver;
 		    File source = ts.getScreenshotAs(OutputType.FILE);
 		    try {
+		        // Specify target directory to store the screenshots
+		        File targetDir = new File("screenshots");
+		        
 		        // Ensure the target directory exists
-		        File targetDir = new File("/home/zadmin/Desktop/TESTNG/MileStoneProject/ScreenShotsofTestng");
 		        if (!targetDir.exists()) {
-		            targetDir.mkdirs();
+		            targetDir.mkdirs(); // Create the directory if it doesn't exist
 		        }
+		        
 		        // Generate timestamp and use it as the test name
 		        String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 		        String testName = "screenshot_" + timestamp;
-		        // Create the file with the generated test name and timestamp
+		        
+		        // Create the file with the generated test name and timestamp in the screenshots folder
 		        FileUtils.copyFile(source, new File(targetDir, testName + ".png"));
+		        
 		        System.out.println("Screenshot taken with name: " + testName);
 		    } catch (IOException e) {
 		        System.out.println("Exception while taking screenshot: " + e.getMessage());
 		    }
 		}
+
+//		public void captureScreenshot() {
+//		    TakesScreenshot ts = (TakesScreenshot) driver;
+//		    File source = ts.getScreenshotAs(OutputType.FILE);
+//		    try {
+//		        // Ensure the target directory exists
+//		        File targetDir = new File("");
+//		        if (!targetDir.exists()) {
+//		            targetDir.mkdirs();
+//		        }
+//		        // Generate timestamp and use it as the test name
+//		        String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+//		        String testName = "screenshot_" + timestamp;
+//		        // Create the file with the generated test name and timestamp
+//		        FileUtils.copyFile(source, new File(targetDir, testName + ".png"));
+//		        System.out.println("Screenshot taken with name: " + testName);
+//		    } catch (IOException e) {
+//		        System.out.println("Exception while taking screenshot: " + e.getMessage());
+//		    }
+//		}
 		
-		@AfterSuite
+		
+	
+		
+		
+		@AfterClass
 		public void closedriver() {
 			driver.quit();
 			

@@ -1,29 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-11T11:44:49 IST" name="Default suite" finished-at="2025-02-11T11:45:03 IST" duration-ms="13823">
+  <suite started-at="2025-02-20T06:49:46 UTC" name="Suite" finished-at="2025-02-20T06:50:22 UTC" duration-ms="35652">
     <groups>
     </groups>
-    <test started-at="2025-02-11T11:44:49 IST" name="Default test" finished-at="2025-02-11T11:45:03 IST" duration-ms="13823">
-      <class name="webdriveruniversity.Contactusform">
-        <test-method is-config="true" signature="urlopening()[pri:0, instance:webdriveruniversity.Contactusform@59662a0b]" started-at="2025-02-11T11:44:44 IST" name="urlopening" finished-at="2025-02-11T11:44:49 IST" duration-ms="4429" status="PASS">
+    <test started-at="2025-02-20T06:49:46 UTC" name="Test" finished-at="2025-02-20T06:50:22 UTC" duration-ms="35652">
+      <class name="pageobejctmodel.POMsecondscneario">
+        <test-method is-config="true" signature="openurlagain(org.testng.ITestContext)[pri:0, instance:pageobejctmodel.POMsecondscneario@302552ec]" started-at="2025-02-20T06:49:46 UTC" name="openurlagain" finished-at="2025-02-20T06:49:59 UTC" duration-ms="13042" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@62fe6067]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- urlopening -->
-        <test-method signature="adddata()[pri:0, instance:webdriveruniversity.Contactusform@59662a0b]" started-at="2025-02-11T11:44:49 IST" name="adddata" finished-at="2025-02-11T11:44:58 IST" duration-ms="9373" status="PASS">
+        </test-method> <!-- openurlagain -->
+        <test-method signature="clickcookies()[pri:0, instance:pageobejctmodel.POMsecondscneario@302552ec]" started-at="2025-02-20T06:49:59 UTC" name="clickcookies" finished-at="2025-02-20T06:49:59 UTC" duration-ms="162" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//button[text()='Accept Cookie']"}
+  (Session info: MicrosoftEdge=133.0.3065.69)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.28.1', revision: '73f5ad48a2'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [e3f56bb92a5af0ae11568417c87db2b2, findElement {value=//button[text()='Accept Cookie'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 133.0.3065.69, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:51567}, msedge: {msedgedriverVersion: 133.0.3065.69 (c3f010c11f3e..., userDataDir: C:\Windows\SystemTemp\scope...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51567/devtoo..., se:cdpVersion: 133.0.3065.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e3f56bb92a5af0ae11568417c87db2b2]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[text()='Accept Cookie']"}
+  (Session info: MicrosoftEdge=133.0.3065.69)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.28.1', revision: '73f5ad48a2'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [e3f56bb92a5af0ae11568417c87db2b2, findElement {value=//button[text()='Accept Cookie'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 133.0.3065.69, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:51567}, msedge: {msedgedriverVersion: 133.0.3065.69 (c3f010c11f3e..., userDataDir: C:\Windows\SystemTemp\scope...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51567/devtoo..., se:cdpVersion: 133.0.3065.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e3f56bb92a5af0ae11568417c87db2b2
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy15.click(Unknown Source)
+at pageobejctmodel.Zebaraopenerpom.clickAcceptCookies(Zebaraopenerpom.java:25)
+at pageobejctmodel.POMsecondscneario.clickcookies(POMsecondscneario.java:34)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1575)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- adddata -->
-        <test-method signature="submitWithoutData()[pri:0, instance:webdriveruniversity.Contactusform@59662a0b]" started-at="2025-02-11T11:44:58 IST" name="submitWithoutData" finished-at="2025-02-11T11:45:03 IST" duration-ms="4426" status="PASS">
+        </test-method> <!-- clickcookies -->
+        <test-method is-config="true" signature="closeurlagain()[pri:0, instance:pageobejctmodel.POMsecondscneario@302552ec]" started-at="2025-02-20T06:50:00 UTC" name="closeurlagain" finished-at="2025-02-20T06:50:01 UTC" duration-ms="1478" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- submitWithoutData -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:webdriveruniversity.Contactusform@59662a0b]" started-at="2025-02-11T11:45:03 IST" name="tearDown" finished-at="2025-02-11T11:45:03 IST" duration-ms="377" status="PASS">
+        </test-method> <!-- closeurlagain -->
+      </class> <!-- pageobejctmodel.POMsecondscneario -->
+      <class name="pageobejctmodel.Scneario3">
+        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:pageobejctmodel.Scneario3@7c6908d7]" started-at="2025-02-20T06:49:46 UTC" name="setup" finished-at="2025-02-20T06:50:03 UTC" duration-ms="16324" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@62fe6067]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- webdriveruniversity.Contactusform -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- setup -->
+        <test-method signature="openurl()[pri:1, instance:pageobejctmodel.Scneario3@7c6908d7]" started-at="2025-02-20T06:50:03 UTC" name="openurl" finished-at="2025-02-20T06:50:05 UTC" duration-ms="2784" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openurl -->
+      </class> <!-- pageobejctmodel.Scneario3 -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

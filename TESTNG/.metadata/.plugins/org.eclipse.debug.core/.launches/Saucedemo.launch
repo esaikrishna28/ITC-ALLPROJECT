@@ -4,11 +4,9 @@
     <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.testng.remote.RemoteTestNG"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="TestNGProject"/>
     <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
-    <mapAttribute key="org.testng.eclipse.ALL_CLASS_METHODS">
-        <mapEntry key="TestNgpackage.Saucedemo" value="login;completeaction;setup;selectproduct"/>
-    </mapAttribute>
+    <mapAttribute key="org.testng.eclipse.ALL_CLASS_METHODS"/>
     <listAttribute key="org.testng.eclipse.CLASS_TEST_LIST">
-        <listEntry value="TestNgpackage.Saucedemo"/>
+        <listEntry value="pageobejctmodel.Saucedemo"/>
     </listAttribute>
     <listAttribute key="org.testng.eclipse.METHOD_TEST_LIST"/>
     <listAttribute key="org.testng.eclipse.PACKAGE_TEST_LIST"/>
